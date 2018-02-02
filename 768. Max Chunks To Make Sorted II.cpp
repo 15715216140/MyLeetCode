@@ -26,9 +26,12 @@ Note:
 arr will have length in range [1, 2000].
 arr[i] will be an integer in range [0, 10**8].
  
+题目大意：找出容器中相对有序（类似快排中的相对有序）的区块的个数（最多可划分出多少块） 
+如（4,2,1,3） （9,5,6,7,8）	共两块
 
-
-
+题解： sum[i]表示  前i项; 从0开始,  如果某块乱序和==有序和，则此块相对有序; ans++,
+		因为若某块区域相当有序,则前面区域一定相对有序,从0开始不影响; 
+		 
 class Solution {
 public:
     int maxChunksToSorted(vector<int>& arr) {
